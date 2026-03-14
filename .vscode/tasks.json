@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build AudLoad",
+            "type": "shell",
+            "command": "C:/w64devkit/w64devkit/bin/g++.exe",
+            "args": [
+                "-g",
+                "src/main.cpp",
+                "src/gui/init/init.cpp",
+                "src/gui/gui/gui.cpp",
+
+                "libs/gl/glad/src/glad.c",
+
+                "libs/imgui/imgui.cpp",
+                "libs/imgui/imgui_draw.cpp",
+                "libs/imgui/imgui_widgets.cpp",
+                "libs/imgui/imgui_tables.cpp",
+                "libs/imgui/backends/imgui_impl_glfw.cpp",
+                "libs/imgui/backends/imgui_impl_opengl3.cpp",
+
+                "-Ilibs/imgui",
+                "-Ilibs/gl/glad/include",
+                "-Ilibs/gl/glfw/include",
+                "-Llibs/gl/glfw/lib-mingw-w64",
+                "-Llibs/imgui",
+                "-lglfw3",
+                "-lopengl32",
+                "-lgdi32",
+                "-luser32",
+                "-lshell32",
+                "-o", "build/AudLoad.exe"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}
