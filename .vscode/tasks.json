@@ -10,6 +10,7 @@
                 "src/main.cpp",
                 "src/gui/init/init.cpp",
                 "src/gui/gui/gui.cpp",
+                "src/audio/audio.cpp",
 
                 "libs/gl/glad/src/glad.c",
 
@@ -30,6 +31,7 @@
                 "-lgdi32",
                 "-luser32",
                 "-lshell32",
+                "-lwinmm",
                 "-o", "build/AudLoad.exe"
             ],
             "group": "build",
