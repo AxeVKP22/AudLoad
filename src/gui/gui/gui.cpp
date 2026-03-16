@@ -1,6 +1,6 @@
 #include "gui.hpp"
 
-void downloadWindow(int sizeX, int sizeY) {
+void downloadWindow(int sizeX, int sizeY, audioParams &audio,  ma_device &device, ma_decoder &decoder) {
 
     std::string windowName = "Download - " + std::string(videoUrl) + "###downloadWindow";
 
@@ -10,13 +10,26 @@ void downloadWindow(int sizeX, int sizeY) {
     if (ImGui::Begin(windowName.c_str(), nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
 
         if (ImGui::InputText("Url", videoUrl, 256, ImGuiInputTextFlags_CharsNoBlank | ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_AutoSelectAll)) {
-            downloadAndConvertAudio(videoUrl);
+            audio = downloadAudio(videoUrl);
+            if (convertAudio(&audio)) {
+                if (initAudio(audio, decoder)) {
+                    if (setUpAudioDevice(decoder, device)) {
+
+                    }
+                    else {
+                        std::cerr << "Failed to set up audio device";
+                    }
+                }
+                else {
+                    std::cerr << "Failed to initialize audio device";
+                }
+            }
         }   
         ImGui::End();
     }
 }
 
-void audioWindow(int sizeX, int sizeY) {
+void audioWindow(int sizeX, int sizeY, audioParams &audio, ma_device &device) {
     std::string windowName = "Audio - " + audio.audiofileName + "###audioWindow";
 
     ImGui::SetNextWindowPos(ImVec2(sizeX/2.5,0), ImGuiCond_Always);
@@ -32,6 +45,9 @@ void audioWindow(int sizeX, int sizeY) {
             ImGui::SetCursorPosY((windowSize.y - textSize.y) * 0.5f);
 
             ImGui::Text("%s", text);
+        }
+        else {
+            playAudio(device);
         }
 
         ImGui::End();

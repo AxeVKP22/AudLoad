@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <vector>
 
@@ -7,5 +9,5 @@
 
 #include "../../audio/audio.hpp"
 
-extern void downloadWindow(int sizeX, int sizeY);
-extern void audioWindow(int sizeX, int sizeY);
+extern void downloadWindow(int sizeX, int sizeY, audioParams &audio,  ma_device &device, ma_decoder &decoder);
+extern void audioWindow(int sizeX, int sizeY, audioParams &audio, ma_device &device);

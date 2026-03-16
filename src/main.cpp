@@ -5,6 +5,12 @@
 
 #include "gui/init/init.hpp"
 #include "gui/gui/gui.hpp"
+#include "audio/audio.hpp"
+
+ma_device device;
+ma_decoder decoder;
+
+bool updateAudioBuffer = true;
 
 int main() {
 
@@ -21,8 +27,8 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT);
         newFrame();
 
-        downloadWindow(WINDOW_SIZE_X, WINDOW_SIZE_Y);
-        audioWindow(WINDOW_SIZE_X, WINDOW_SIZE_Y);
+        downloadWindow(WINDOW_SIZE_X, WINDOW_SIZE_Y, audio, device, decoder);
+        audioWindow(WINDOW_SIZE_X, WINDOW_SIZE_Y, audio, device);
 
         render();
         glfwSwapBuffers(window);

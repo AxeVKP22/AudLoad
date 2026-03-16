@@ -22,6 +22,7 @@
                 "libs/imgui/backends/imgui_impl_opengl3.cpp",
 
                 "-Ilibs/imgui",
+                "-Ilibs/miniaudio",
                 "-Ilibs/gl/glad/include",
                 "-Ilibs/gl/glfw/include",
                 "-Llibs/gl/glfw/lib-mingw-w64",

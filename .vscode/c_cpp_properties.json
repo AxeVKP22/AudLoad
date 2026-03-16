@@ -6,7 +6,8 @@
                 "${workspaceFolder}/src/",
                 "${workspaceFolder}/libs/gl/glad/include/",
                 "${workspaceFolder}/libs/gl/glfw/include/",
-                "${workspaceFolder}/libs/imgui/"
+                "${workspaceFolder}/libs/imgui/",
+                "${workspaceFolder}/libs/miniaudio/"
             ],
             "defines": [],
             "compilerPath": "C:/w64devkit/w64devkit/bin/g++.exe",
