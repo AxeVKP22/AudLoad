@@ -11,18 +11,29 @@ std::string ffExeDir = ".\\bin\\ffmpeg\\ffmpeg.exe";
 
 audioParams downloadAudio(char *url) {
     audioParams downloadedAudio;
-    std::string downloadCommand = ytExeDir + " -f bestaudio[ext=m4a] -o temp\\temp.%(ext)s " + url;
+    std::string downloadCommand = ytExeDir + " --no-playlist --no-warnings --no-progress -f bestaudio[ext=m4a] -o temp\\temp.%(ext)s " + url;
     std::system(downloadCommand.c_str());
 
-    std::string nameCommand = ytExeDir + " --print title " + url;
+    std::string nameCommand = ytExeDir + " --no-playlist --no-warnings --no-progress " "--print \"%(title).200s\t%(uploader).100s\t%(duration)s\" " + url;
+
     FILE* pipe = _popen(nameCommand.c_str(), "r");
 
-    char buffer[512];
-    fgets(buffer, sizeof(buffer), pipe);
+    char buffer[1024];
+    std::string output;
+    if (fgets(buffer, sizeof(buffer), pipe)) {
+        output = buffer;
+        output.erase(output.find_last_not_of("\r\n") + 1);
+    }
 
     _pclose(pipe);
 
-    downloadedAudio.audiofileName = std::string(buffer);
+    std::stringstream ss(output);
+
+    std::getline(ss, downloadedAudio.audiofileName, '\t');
+    std::getline(ss, downloadedAudio.audioAuthor, '\t');
+    std::getline(ss, downloadedAudio.audioDuration, '\t');
+
+    downloadedAudio.loaded = true;
 
     return downloadedAudio;
 }
@@ -55,6 +66,11 @@ bool initAudio(audioParams &audio, ma_decoder &decoder) {
     }
 
     return true;
+}
+
+void unInitAudio(ma_decoder &decoder ,ma_device &device) {
+    ma_device_uninit(&device);
+    ma_decoder_uninit(&decoder);
 }
 
 bool setUpAudioDevice(ma_decoder &decoder, ma_device &device) {

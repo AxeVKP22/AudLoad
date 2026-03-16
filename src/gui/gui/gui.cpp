@@ -1,5 +1,7 @@
 #include "gui.hpp"
 
+namespace fs = std::filesystem;
+
 void downloadWindow(int sizeX, int sizeY, audioParams &audio,  ma_device &device, ma_decoder &decoder) {
 
     std::string windowName = "Download - " + std::string(videoUrl) + "###downloadWindow";
@@ -10,21 +12,53 @@ void downloadWindow(int sizeX, int sizeY, audioParams &audio,  ma_device &device
     if (ImGui::Begin(windowName.c_str(), nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
 
         if (ImGui::InputText("Url", videoUrl, 256, ImGuiInputTextFlags_CharsNoBlank | ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_AutoSelectAll)) {
+            audio.audiofile.clear();
+            unInitAudio(decoder, device);
             audio = downloadAudio(videoUrl);
-            if (convertAudio(&audio)) {
+            if (convertAudio(&audio) && !audio.audiofile.empty()) {
                 if (initAudio(audio, decoder)) {
-                    if (setUpAudioDevice(decoder, device)) {
-
-                    }
-                    else {
+                    if (!setUpAudioDevice(decoder, device)) {
                         std::cerr << "Failed to set up audio device";
                     }
                 }
                 else {
+                    unInitAudio(decoder, device);
                     std::cerr << "Failed to initialize audio device";
                 }
             }
-        }   
+            else {
+                ImGui::Text("Failed to download or convert audio.");
+            }
+        }  
+
+        if (ImGui::SmallButton("Download")) {
+            audio.audiofile.clear();
+            unInitAudio(decoder, device);
+            audio = downloadAudio(videoUrl);
+            if (convertAudio(&audio) && !audio.audiofile.empty()) {
+                if (initAudio(audio, decoder)) {
+                    if (!setUpAudioDevice(decoder, device)) {
+                        std::cerr << "Failed to set up audio device";
+                    }
+                }
+                else {
+                    unInitAudio(decoder, device);
+                    std::cerr << "Failed to initialize audio device";
+                }
+            }
+            else {
+                ImGui::Text("Failed to download or convert audio.");
+            }
+        }
+
+        if (audio.loaded) {
+            int duration = std::stoi(audio.audioDuration);
+            int durationM = ((int)duration % 3600) / 60;
+            int durationS = (int)duration % 60;
+            ImGui::Text(std::string("Author: " + audio.audioAuthor).c_str());
+            ImGui::Text(std::string("Name: " + audio.audiofileName).c_str());
+            ImGui::Text("Duration: %d:%02d", durationM, durationS);
+        }
         ImGui::End();
     }
 }

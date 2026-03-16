@@ -34,6 +34,7 @@ int main() {
         glfwSwapBuffers(window);
     }
 
+    unInitAudio(decoder, device);
     imGuiShutdown();
     glfwTerminate();
 
