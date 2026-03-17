@@ -2,14 +2,12 @@
 #include "audio.hpp"
 
 char videoUrl[256];
-audioParams audio;                           
-
-bool isPlaying = false;
+audioParams audio;
 
 std::string ytExeDir = ".\\bin\\yt_dlp\\yt-dlp_x86.exe";
 std::string ffExeDir = ".\\bin\\ffmpeg\\ffmpeg.exe";
 
-audioParams downloadAudio(char *url) {
+audioParams downloadAudio(const char* url) {
     audioParams downloadedAudio;
     std::string downloadCommand = ytExeDir + " --no-playlist --no-warnings --no-progress -f bestaudio[ext=m4a] -o temp\\temp.%(ext)s " + url;
     std::system(downloadCommand.c_str());
@@ -34,11 +32,13 @@ audioParams downloadAudio(char *url) {
     std::getline(ss, downloadedAudio.audioDuration, '\t');
 
     downloadedAudio.loaded = true;
+    downloadedAudio.isPlaying = false;
+    downloadedAudio.volume = 0.5;
 
     return downloadedAudio;
 }
 
-bool convertAudio(audioParams *audio) {
+bool convertAudio(audioParams &audio) {
     std::string command = ffExeDir + " -i temp\\temp.m4a -ac 2 -ar 44100 -f wav pipe:1";
 
     FILE* pipe = _popen(command.c_str(), "rb");
@@ -49,7 +49,7 @@ bool convertAudio(audioParams *audio) {
         if (bytes == 0) {
             break;
         }
-        audio->audiofile.insert(audio->audiofile.end(), buffer, buffer + bytes);
+        audio.audiofile.insert(audio.audiofile.end(), buffer, buffer + bytes);
     }
 
     _pclose(pipe);
@@ -73,7 +73,7 @@ void unInitAudio(ma_decoder &decoder ,ma_device &device) {
     ma_decoder_uninit(&decoder);
 }
 
-bool setUpAudioDevice(ma_decoder &decoder, ma_device &device) {
+bool setUpAudioDevice(ma_decoder &decoder, ma_device &device, audioParams &audio) {
     ma_result result;
     ma_device_config deviceConfig = ma_device_config_init(ma_device_type_playback);
     deviceConfig.playback.format = decoder.outputFormat;
@@ -91,27 +91,19 @@ bool setUpAudioDevice(ma_decoder &decoder, ma_device &device) {
         return false;
     }
 
+    ma_decoder_get_length_in_pcm_frames(&decoder, &audio.totalFrames);
+
     return true;
 }
 
 void playAudio(ma_device &device) {
-    if (!isPlaying) {
-        ma_device_start(&device);
-    }
+    ma_device_start(&device);
 }
 
-void pauseAudio() {
-    if (isPlaying) {
-        
-    }
+void pauseAudio(ma_device &device) {
+    ma_device_stop(&device);
 }
 
-void startAudio() {
-    if (!isPlaying) {
-        
-    }
-}
-
-void setAudioVolume(float volume) {
-    
+void setAudioVolume(ma_device &device, float volume) {
+    ma_device_set_master_volume(&device, volume);
 }

@@ -9,46 +9,16 @@ void downloadWindow(int sizeX, int sizeY, audioParams &audio,  ma_device &device
     ImGui::SetNextWindowPos(ImVec2(0,0), ImGuiCond_Always);
     ImGui::SetNextWindowSize(ImVec2(sizeX/2.5, sizeY), ImGuiCond_Always);
 
-    if (ImGui::Begin(windowName.c_str(), nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
+    if (ImGui::Begin(windowName.c_str(), nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove) || ImGui::SmallButton("Download")) {
 
         if (ImGui::InputText("Url", videoUrl, 256, ImGuiInputTextFlags_CharsNoBlank | ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_AutoSelectAll)) {
-            audio.audiofile.clear();
-            unInitAudio(decoder, device);
-            audio = downloadAudio(videoUrl);
-            if (convertAudio(&audio) && !audio.audiofile.empty()) {
-                if (initAudio(audio, decoder)) {
-                    if (!setUpAudioDevice(decoder, device)) {
-                        std::cerr << "Failed to set up audio device";
-                    }
-                }
-                else {
-                    unInitAudio(decoder, device);
-                    std::cerr << "Failed to initialize audio device";
-                }
-            }
-            else {
+            if (!downloadFromUrl(videoUrl, audio, decoder, device)) {
                 ImGui::Text("Failed to download or convert audio.");
             }
         }  
 
         if (ImGui::SmallButton("Download")) {
-            audio.audiofile.clear();
-            unInitAudio(decoder, device);
-            audio = downloadAudio(videoUrl);
-            if (convertAudio(&audio) && !audio.audiofile.empty()) {
-                if (initAudio(audio, decoder)) {
-                    if (!setUpAudioDevice(decoder, device)) {
-                        std::cerr << "Failed to set up audio device";
-                    }
-                }
-                else {
-                    unInitAudio(decoder, device);
-                    std::cerr << "Failed to initialize audio device";
-                }
-            }
-            else {
-                ImGui::Text("Failed to download or convert audio.");
-            }
+            downloadFromUrl(videoUrl, audio, decoder, device);
         }
 
         if (audio.loaded) {
@@ -81,9 +51,48 @@ void audioWindow(int sizeX, int sizeY, audioParams &audio, ma_device &device) {
             ImGui::Text("%s", text);
         }
         else {
-            playAudio(device);
-        }
+            if (ImGui::SliderFloat("Volume", &audio.volume, 0.0, 1.0)) {
+                 setAudioVolume(device, audio.volume);
+            }
+            if (ImGui::Button(audio.isPlaying ? "Stop" : "Play")) {
+                audio.isPlaying = !audio.isPlaying;
 
+                if (audio.isPlaying) {
+                    ma_device_start(&device);
+                } else {
+                    ma_device_stop(&device);
+                }
+            }
+
+            ImGui::NewLine();
+
+            if (ImGui::SmallButton("Save")) {
+                std::string savePath = getSavePath();
+
+                saveFile(savePath, audio);
+            }
+        }   
         ImGui::End();
     }
+}
+
+
+bool downloadFromUrl(const char* url, audioParams &audio, ma_decoder &decoder, ma_device &device) {
+    audio.audiofile.clear();
+    unInitAudio(decoder, device);
+    audio = downloadAudio(url);
+    if (convertAudio(audio) && !audio.audiofile.empty()) {
+        if (initAudio(audio, decoder)) {
+            if (!setUpAudioDevice(decoder, device, audio)) {
+                std::cerr << "Failed to set up audio device";
+                return false;
+            }
+            return true;
+        }
+        else {
+            unInitAudio(decoder, device);
+            std::cerr << "Failed to initialize audio device";
+        }
+    }
+    return false;
 }

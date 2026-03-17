@@ -9,8 +9,11 @@
 #include "backends/imgui_impl_opengl3.h"
 
 #include "../../audio/audio.hpp"
+#include "../../save/save.hpp"
 
 
 
 extern void downloadWindow(int sizeX, int sizeY, audioParams &audio,  ma_device &device, ma_decoder &decoder);
 extern void audioWindow(int sizeX, int sizeY, audioParams &audio, ma_device &device);
+
+extern bool downloadFromUrl(const char* url, audioParams &audio, ma_decoder &decoder, ma_device &device);
