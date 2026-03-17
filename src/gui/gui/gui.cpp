@@ -68,8 +68,19 @@ void audioWindow(int sizeX, int sizeY, audioParams &audio, ma_device &device) {
 
             if (ImGui::SmallButton("Save")) {
                 std::string savePath = getSavePath();
+                std::string bDot, aDot;
 
-                saveFile(savePath, audio);
+                std::stringstream ss(savePath);
+
+                std::getline(ss, bDot, '.');
+                std::getline(ss, aDot);
+
+                if (aDot == "wav") {
+                    saveFileWav(savePath, audio);
+                }
+                else if (aDot == "mp3") {
+                    saveFileMP3(savePath, audio);
+                }
             }
         }   
         ImGui::End();

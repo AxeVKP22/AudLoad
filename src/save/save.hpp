@@ -5,4 +5,5 @@
 #include "../audio/audio.hpp"
 
 extern std::string getSavePath();
-extern void saveFile(std::string path, audioParams audio);
+extern void saveFileWav(std::string path, audioParams audio);
+extern void saveFileMP3(std::string path, audioParams audio);
