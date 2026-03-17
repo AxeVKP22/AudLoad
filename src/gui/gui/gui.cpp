@@ -54,7 +54,7 @@ void audioWindow(int sizeX, int sizeY, audioParams &audio, ma_device &device) {
             if (ImGui::SliderFloat("Volume", &audio.volume, 0.0, 1.0)) {
                  setAudioVolume(device, audio.volume);
             }
-            if (ImGui::Button(audio.isPlaying ? "Stop" : "Play")) {
+            if (ImGui::SmallButton(audio.isPlaying ? "Stop" : "Play")) {
                 audio.isPlaying = !audio.isPlaying;
 
                 if (audio.isPlaying) {
