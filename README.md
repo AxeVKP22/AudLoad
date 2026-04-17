@@ -1,7 +1,7 @@
 # AudLoad
 A tool to download and play audio from supported sources
 
-<img src="da/gif.gif" height=200/>
+<img src="da/gif.gif" height=300/>
 
 ## Third-Party Libraries
 
