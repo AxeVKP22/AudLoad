@@ -11,7 +11,8 @@
                 "src/gui/init/init.cpp",
                 "src/gui/gui/gui.cpp",
                 "src/audio/audio.cpp",
-                "src/save/save.cpp",
+                "src/disk/save/save.cpp",
+                "src/disk/load/load.cpp",
 
                 "libs/gl/glad/src/glad.c",
 
@@ -26,6 +27,7 @@
                 "-Ilibs/miniaudio",
                 "-Ilibs/gl/glad/include",
                 "-Ilibs/gl/glfw/include",
+                "-Ilibs/json/",
                 "-Llibs/gl/glfw/lib-mingw-w64",
                 "-Llibs/imgui",
                 "-lglfw3",
