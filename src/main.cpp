@@ -1,5 +1,5 @@
 #define WINDOW_SIZE_X 500
-#define WINDOW_SIZE_Y 350
+#define WINDOW_SIZE_Y 300
 
 #include <iostream>
 #include <fstream>
@@ -28,6 +28,8 @@ int main() {
     if (f.is_open()) {
         loadSettings(loadPath, &settings);
     }
+
+    donwloadYtDlp();
 
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();

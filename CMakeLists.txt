@@ -17,6 +17,14 @@ set_target_properties(glfw PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/libs/gl/glfw/include"
 )
 
+add_library(curl SHARED IMPORTED)
+
+set_target_properties(curl PROPERTIES
+    IMPORTED_IMPLIB "${CMAKE_SOURCE_DIR}/libs/curl/lib/libcurl.lib"
+    IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/libs/curl/bin/libcurl.dll"
+    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/libs/curl/include"
+)
+
 add_library(glad STATIC
     libs/gl/glad/src/glad.c
 )
@@ -57,6 +65,7 @@ target_include_directories(AudLoad PRIVATE
 target_link_libraries(AudLoad PRIVATE
     glad
     glfw
+    curl
     OpenGL::GL
 )
 
@@ -70,4 +79,10 @@ add_custom_command(TARGET AudLoad POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${CMAKE_SOURCE_DIR}/libs/gl/glfw/lib-vc2022/glfw3.dll"
         "$<TARGET_FILE_DIR:AudLoad>/glfw3.dll"
+)
+
+add_custom_command(TARGET AudLoad POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/libs/curl/bin/libcurl.dll"
+        "$<TARGET_FILE_DIR:AudLoad>/libcurl.dll"
 )
