@@ -87,7 +87,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/include"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/include" /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/curl/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -115,10 +115,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -126,9 +126,18 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>	</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/lib-vc2022/glfw3.dll C:/Users/bbarm/AudLoad/AudLoad/build/Debug/glfw3.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/bbarm/AudLoad/AudLoad/libs/curl/bin/libcurl.dll C:/Users/bbarm/AudLoad/AudLoad/build/Debug/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -138,7 +147,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>Debug\glad.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\lib-vc2022\glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Debug\glad.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\lib-vc2022\glfw3.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\lib\libcurl.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -158,7 +167,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/include"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/include" /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/curl/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -187,10 +196,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -198,9 +207,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>	</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/lib-vc2022/glfw3.dll C:/Users/bbarm/AudLoad/AudLoad/build/glfw3.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/bbarm/AudLoad/AudLoad/libs/curl/bin/libcurl.dll C:/Users/bbarm/AudLoad/AudLoad/build/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -210,7 +228,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>Release\glad.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\lib-vc2022\glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Release\glad.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\lib-vc2022\glfw3.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\lib\libcurl.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -230,7 +248,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/include"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/include" /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/curl/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -259,10 +277,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -270,9 +288,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>	</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/lib-vc2022/glfw3.dll C:/Users/bbarm/AudLoad/AudLoad/build/MinSizeRel/glfw3.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/bbarm/AudLoad/AudLoad/libs/curl/bin/libcurl.dll C:/Users/bbarm/AudLoad/AudLoad/build/MinSizeRel/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -282,7 +309,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>MinSizeRel\glad.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\lib-vc2022\glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>MinSizeRel\glad.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\lib-vc2022\glfw3.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\lib\libcurl.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -302,7 +329,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/include"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/include" /external:I "C:/Users/bbarm/AudLoad/AudLoad/libs/curl/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -330,10 +357,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glad\include;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui;C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends;C:\Users\bbarm\AudLoad\AudLoad\libs\json;C:\Users\bbarm\AudLoad\AudLoad\libs\miniaudio;C:\Users\bbarm\AudLoad\AudLoad\src;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\include;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -341,9 +368,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>	</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/bbarm/AudLoad/AudLoad/libs/gl/glfw/lib-vc2022/glfw3.dll C:/Users/bbarm/AudLoad/AudLoad/build/RelWithDebInfo/glfw3.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/bbarm/AudLoad/AudLoad/libs/curl/bin/libcurl.dll C:/Users/bbarm/AudLoad/AudLoad/build/RelWithDebInfo/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -353,7 +389,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>RelWithDebInfo\glad.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\lib-vc2022\glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>RelWithDebInfo\glad.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\gl\glfw\lib-vc2022\glfw3.lib;C:\Users\bbarm\AudLoad\AudLoad\libs\curl\lib\libcurl.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>

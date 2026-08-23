@@ -64,7 +64,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.51+25f168cee for .NET Framework
-      Build started 8/22/2026 6:18:28 PM.
+      Build started 8/23/2026 12:38:27 PM.
       
       Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\4.4.2\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -93,7 +93,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.99
+      Time Elapsed 00:00:00.37
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -505,7 +505,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.51+25f168cee for .NET Framework
-      Build started 8/22/2026 6:18:29 PM.
+      Build started 8/23/2026 12:38:27 PM.
       
       Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\4.4.2\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -534,7 +534,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:01.02
+      Time Elapsed 00:00:00.34
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -794,8 +794,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-bu565i"
-      binary: "C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-bu565i"
+      source: "C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-u8x91c"
+      binary: "C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-u8x91c"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
@@ -805,39 +805,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: false
       stdout: |
-        Change Dir: 'C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-bu565i'
+        Change Dir: 'C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-u8x91c'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_73382.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a17ed.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.51+25f168cee for .NET Framework
-        Build started 8/22/2026 6:18:31 PM.
+        Build started 8/23/2026 12:38:28 PM.
         
-        Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bu565i\\cmTC_73382.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u8x91c\\cmTC_a17ed.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bu565i\\Debug\\".
-          Creating directory "cmTC_73382.dir\\Debug\\cmTC_73382.tlog\\".
+          Creating directory "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u8x91c\\Debug\\".
+          Creating directory "cmTC_a17ed.dir\\Debug\\cmTC_a17ed.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_73382.dir\\Debug\\cmTC_73382.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_73382.dir\\Debug\\cmTC_73382.tlog\\unsuccessfulbuild".
+          Creating "cmTC_a17ed.dir\\Debug\\cmTC_a17ed.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_a17ed.dir\\Debug\\cmTC_a17ed.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_73382.dir\\Debug\\\\" /Fd"cmTC_73382.dir\\Debug\\vc143.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_a17ed.dir\\Debug\\\\" /Fd"cmTC_a17ed.dir\\Debug\\vc143.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_73382.dir\\Debug\\\\" /Fd"cmTC_73382.dir\\Debug\\vc143.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_a17ed.dir\\Debug\\\\" /Fd"cmTC_a17ed.dir\\Debug\\vc143.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bu565i\\Debug\\cmTC_73382.exe" /INCREMENTAL /ILK:"cmTC_73382.dir\\Debug\\cmTC_73382.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-bu565i/Debug/cmTC_73382.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-bu565i/Debug/cmTC_73382.lib" /MACHINE:X64  /machine:x64 cmTC_73382.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_73382.vcxproj -> C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bu565i\\Debug\\cmTC_73382.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u8x91c\\Debug\\cmTC_a17ed.exe" /INCREMENTAL /ILK:"cmTC_a17ed.dir\\Debug\\cmTC_a17ed.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-u8x91c/Debug/cmTC_a17ed.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-u8x91c/Debug/cmTC_a17ed.lib" /MACHINE:X64  /machine:x64 cmTC_a17ed.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_a17ed.vcxproj -> C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u8x91c\\Debug\\cmTC_a17ed.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_73382.dir\\Debug\\cmTC_73382.tlog\\unsuccessfulbuild".
-          Touching "cmTC_73382.dir\\Debug\\cmTC_73382.tlog\\cmTC_73382.lastbuildstate".
-        Done Building Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bu565i\\cmTC_73382.vcxproj" (default targets).
+          Deleting file "cmTC_a17ed.dir\\Debug\\cmTC_a17ed.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a17ed.dir\\Debug\\cmTC_a17ed.tlog\\cmTC_a17ed.lastbuildstate".
+        Done Building Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u8x91c\\cmTC_a17ed.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.98
+        Time Elapsed 00:00:00.32
         
       exitCode: 0
   -
@@ -850,7 +850,7 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
-        link line: [  C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bu565i\\Debug\\cmTC_73382.exe" /INCREMENTAL /ILK:"cmTC_73382.dir\\Debug\\cmTC_73382.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-bu565i/Debug/cmTC_73382.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-bu565i/Debug/cmTC_73382.lib" /MACHINE:X64  /machine:x64 cmTC_73382.dir\\Debug\\CMakeCCompilerABI.obj] ==> linker [C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe]
+        link line: [  C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u8x91c\\Debug\\cmTC_a17ed.exe" /INCREMENTAL /ILK:"cmTC_a17ed.dir\\Debug\\cmTC_a17ed.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-u8x91c/Debug/cmTC_a17ed.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-u8x91c/Debug/cmTC_a17ed.lib" /MACHINE:X64  /machine:x64 cmTC_a17ed.dir\\Debug\\CMakeCCompilerABI.obj] ==> linker [C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe]
         linker tool for 'C': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe 
         implicit libs: []
         implicit objs: []
@@ -878,8 +878,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-hniiac"
-      binary: "C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-hniiac"
+      source: "C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-fphdd4"
+      binary: "C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-fphdd4"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -890,39 +890,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: false
       stdout: |
-        Change Dir: 'C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-hniiac'
+        Change Dir: 'C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-fphdd4'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9933c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1b429.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.51+25f168cee for .NET Framework
-        Build started 8/22/2026 6:18:32 PM.
+        Build started 8/23/2026 12:38:29 PM.
         
-        Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hniiac\\cmTC_9933c.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fphdd4\\cmTC_1b429.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hniiac\\Debug\\".
-          Creating directory "cmTC_9933c.dir\\Debug\\cmTC_9933c.tlog\\".
+          Creating directory "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fphdd4\\Debug\\".
+          Creating directory "cmTC_1b429.dir\\Debug\\cmTC_1b429.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_9933c.dir\\Debug\\cmTC_9933c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_9933c.dir\\Debug\\cmTC_9933c.tlog\\unsuccessfulbuild".
+          Creating "cmTC_1b429.dir\\Debug\\cmTC_1b429.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_1b429.dir\\Debug\\cmTC_1b429.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_9933c.dir\\Debug\\\\" /Fd"cmTC_9933c.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_1b429.dir\\Debug\\\\" /Fd"cmTC_1b429.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_9933c.dir\\Debug\\\\" /Fd"cmTC_9933c.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_1b429.dir\\Debug\\\\" /Fd"cmTC_1b429.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hniiac\\Debug\\cmTC_9933c.exe" /INCREMENTAL /ILK:"cmTC_9933c.dir\\Debug\\cmTC_9933c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-hniiac/Debug/cmTC_9933c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-hniiac/Debug/cmTC_9933c.lib" /MACHINE:X64  /machine:x64 cmTC_9933c.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_9933c.vcxproj -> C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hniiac\\Debug\\cmTC_9933c.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fphdd4\\Debug\\cmTC_1b429.exe" /INCREMENTAL /ILK:"cmTC_1b429.dir\\Debug\\cmTC_1b429.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-fphdd4/Debug/cmTC_1b429.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-fphdd4/Debug/cmTC_1b429.lib" /MACHINE:X64  /machine:x64 cmTC_1b429.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_1b429.vcxproj -> C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fphdd4\\Debug\\cmTC_1b429.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_9933c.dir\\Debug\\cmTC_9933c.tlog\\unsuccessfulbuild".
-          Touching "cmTC_9933c.dir\\Debug\\cmTC_9933c.tlog\\cmTC_9933c.lastbuildstate".
-        Done Building Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hniiac\\cmTC_9933c.vcxproj" (default targets).
+          Deleting file "cmTC_1b429.dir\\Debug\\cmTC_1b429.tlog\\unsuccessfulbuild".
+          Touching "cmTC_1b429.dir\\Debug\\cmTC_1b429.tlog\\cmTC_1b429.lastbuildstate".
+        Done Building Project "C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fphdd4\\cmTC_1b429.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.99
+        Time Elapsed 00:00:00.33
         
       exitCode: 0
   -
@@ -935,7 +935,7 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
-        link line: [  C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hniiac\\Debug\\cmTC_9933c.exe" /INCREMENTAL /ILK:"cmTC_9933c.dir\\Debug\\cmTC_9933c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-hniiac/Debug/cmTC_9933c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-hniiac/Debug/cmTC_9933c.lib" /MACHINE:X64  /machine:x64 cmTC_9933c.dir\\Debug\\CMakeCXXCompilerABI.obj] ==> linker [C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe]
+        link line: [  C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\bbarm\\AudLoad\\AudLoad\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fphdd4\\Debug\\cmTC_1b429.exe" /INCREMENTAL /ILK:"cmTC_1b429.dir\\Debug\\cmTC_1b429.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-fphdd4/Debug/cmTC_1b429.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/CMakeScratch/TryCompile-fphdd4/Debug/cmTC_1b429.lib" /MACHINE:X64  /machine:x64 cmTC_1b429.dir\\Debug\\CMakeCXXCompilerABI.obj] ==> linker [C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe]
         linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe 
         implicit libs: []
         implicit objs: []
