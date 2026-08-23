@@ -1,0 +1,12 @@
+C:\Users\bbarm\AudLoad\AudLoad\src\main.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\main.obj
+C:\Users\bbarm\AudLoad\AudLoad\src\audio\audio.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\audio.obj
+C:\Users\bbarm\AudLoad\AudLoad\src\disk\load\load.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\load.obj
+C:\Users\bbarm\AudLoad\AudLoad\src\disk\save\save.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\save.obj
+C:\Users\bbarm\AudLoad\AudLoad\src\gui\gui\gui.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\gui.obj
+C:\Users\bbarm\AudLoad\AudLoad\src\gui\init\init.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\init.obj
+C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\imgui.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\imgui.obj
+C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\imgui_draw.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\imgui_draw.obj
+C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\imgui_widgets.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\imgui_widgets.obj
+C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\imgui_tables.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\imgui_tables.obj
+C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends\imgui_impl_glfw.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\imgui_impl_glfw.obj
+C:\Users\bbarm\AudLoad\AudLoad\libs\imgui\backends\imgui_impl_opengl3.cpp;C:\Users\bbarm\AudLoad\AudLoad\build\AudLoad.dir\Release\imgui_impl_opengl3.obj

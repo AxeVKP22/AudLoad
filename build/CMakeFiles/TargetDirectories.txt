@@ -1,0 +1,4 @@
+C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/glad.dir
+C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/AudLoad.dir
+C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/bbarm/AudLoad/AudLoad/build/CMakeFiles/ZERO_CHECK.dir
