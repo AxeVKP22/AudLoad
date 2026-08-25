@@ -3,7 +3,8 @@
 namespace fs = std::filesystem;
 
 std::string getSavePath(std::string appDir) {
-    char szFile[MAX_PATH] = {0};
+    char szFile[MAX_PATH];
+    strncpy_s(szFile, audio.audiofileName.c_str(), _TRUNCATE);
 
     OPENFILENAME ofn = {};
     ofn.lStructSize = sizeof(ofn);
