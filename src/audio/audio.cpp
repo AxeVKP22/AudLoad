@@ -4,7 +4,7 @@
 char videoUrl[256];
 audioParams audio;
 
-std::string ytExeDir = ".\\bin\\yt_dlp\\yt-dlp_x86.exe";
+std::string ytExeDir = ".\\bin\\yt_dlp\\yt-dlp.exe";
 std::string ffExeDir = ".\\bin\\ffmpeg\\ffmpeg.exe";
 
 audioParams downloadAudio(const char* url) {

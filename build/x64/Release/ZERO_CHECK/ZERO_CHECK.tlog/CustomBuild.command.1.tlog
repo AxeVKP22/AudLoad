@@ -1,0 +1,10 @@
+^C:\USERS\BBARM\AUDLOAD\AUDLOAD\BUILD\CMAKEFILES\5B5077B03451FAF4ED1875439E8D6CA5\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/bbarm/AudLoad/AudLoad -BC:/Users/bbarm/AudLoad/AudLoad/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/bbarm/AudLoad/AudLoad/build/AudLoad.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
